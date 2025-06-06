@@ -1,3 +1,0 @@
-rootProject.name = 'StockMarketReactNativeClient'
-
-include ':app'

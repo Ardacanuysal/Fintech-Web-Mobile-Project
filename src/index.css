@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Font medium color in light mode */
+.font-medium {
+  @apply text-gray-900;
+}
+
+/* Dark mode styles */
+.dark body {
+  @apply bg-gray-900;
+}
+
+.dark .bg-white {
+  @apply bg-gray-800;
+}
+
+.dark .bg-gray-50 {
+  @apply bg-gray-900;
+}
+
+.dark .bg-gray-100 {
+  @apply bg-gray-800;
+}
+
+.dark .text-gray-900 {
+  @apply text-gray-100;
+}
+
+.dark .text-gray-800 {
+  @apply text-gray-200;
+}
+
+.dark .text-gray-700 {
+  @apply text-gray-300;
+}
+
+.dark .text-gray-600 {
+  @apply text-gray-400;
+}
+
+.dark .text-gray-500 {
+  @apply text-gray-400;
+}
+
+.dark .border-gray-200 {
+  @apply border-gray-700;
+}
+
+.dark .border-gray-100 {
+  @apply border-gray-800;
+}
+
+.dark .hover\:bg-gray-50:hover {
+  @apply hover:bg-gray-700;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  @apply hover:bg-gray-700;
+}
+
+/* Time period buttons in dark mode */
+.dark button.rounded-full {
+  @apply hover:bg-transparent hover:text-blue-400;
+}
+
+/* News headline hover color in dark mode */
+.dark .group-hover\:text-blue-600 {
+  @apply group-hover:text-[#90a8d7];
+}
+
+/* Drawer/Sidebar dark mode styles */
+.dark .md\:bg-white {
+  @apply md:bg-gray-800;
+}
+
+.dark .md\:border-r {
+  @apply md:border-gray-700;
+}
+
+/* Input dark mode styles */
+.dark input {
+  @apply bg-gray-800;
+}
+
+.dark input:focus {
+  @apply bg-gray-800 ring-gray-700 border-gray-600;
+}
+
+/* Light mode overrides to ensure text visibility */
+.text-gray-500 {
+  @apply text-gray-600;
+}
+
+.text-gray-600 {
+  @apply text-gray-700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-gray-900;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  @apply text-gray-100;
+}
+
+/* Dark mode override for font-medium */
+.dark .font-medium {
+  @apply text-gray-100;
+}

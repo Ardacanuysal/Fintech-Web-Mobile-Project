@@ -1,0 +1,40 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        // Allow read/write only if the user is authenticated and accessing their own data
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid",
+        
+        "watchlist": {
+          ".validate": "newData.isArray()"
+        },
+        
+        "portfolio": {
+          ".validate": "newData.isArray()",
+          "$position": {
+            ".validate": "newData.hasChildren(['symbol', 'shares', 'purchasePrice', 'addedAt']) &&
+                         newData.child('symbol').isString() &&
+                         newData.child('shares').isNumber() &&
+                         newData.child('shares').val() > 0 &&
+                         newData.child('purchasePrice').isNumber() &&
+                         newData.child('purchasePrice').val() > 0 &&
+                         newData.child('addedAt').isString()"
+          }
+        },
+        
+        "email": {
+          ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$/i)"
+        },
+        
+        "displayName": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        
+        "createdAt": {
+          ".validate": "newData.isString() || newData.val() === now"
+        }
+      }
+    }
+  }
+}
